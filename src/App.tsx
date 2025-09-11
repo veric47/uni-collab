@@ -17,7 +17,7 @@ function App() {
         <a href="https://aust.edu.ng/" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        
+         
       </div>
 
        <Router>
