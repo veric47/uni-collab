@@ -17,10 +17,9 @@ function App() {
         <a href="https://aust.edu.ng/" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-         
       </div> 
  
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
