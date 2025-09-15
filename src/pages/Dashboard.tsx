@@ -5,8 +5,9 @@ import { mockEvents } from "../data/mockEvents";
 export default function Dashboard() {
   return (
     <div className="grid gap-6">
+      <header className="bg-blue-700 text-white p-4 rounded">
       <h1 className="text-3xl font-bold">African University of Science and Technology</h1>
-
+     </header>
       <div className="grid md:grid-cols-4 gap-4">
         <Link to="/profiles" className="card p-6 bg-white hover:shadow"> Profiles</Link>
         <Link to="/projects" className="card p-6 bg-white hover:shadow"> Projects</Link>
