@@ -18,9 +18,9 @@ function App() {
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
          
-      </div>
-
-       <Router>
+      </div> 
+ 
+    <Router>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
@@ -34,5 +34,3 @@ function App() {
 }
 
 export default App
-
-
