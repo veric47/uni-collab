@@ -46,3 +46,10 @@
 .read-the-docs {
   color: #888;
 }
+.text-3xl font-bold{
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb); /* nice blue gradient */
+  color: white;
+  border-bottom: 4px solid #1e40af;
+}
