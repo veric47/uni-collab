@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="logo-container">
         <a href="https://aust.edu.ng/" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
