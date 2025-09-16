@@ -4,6 +4,14 @@
   padding: 1rem;
   border-radius: 300px;
   text-align: center;
+  position: fixed;
+    top: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    display: flex
+;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
