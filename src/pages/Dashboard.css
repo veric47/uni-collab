@@ -4,18 +4,24 @@
   border-radius: 0.5rem;
   text-align: center;
 }
-.dashboard-card{
-background: #850a0a;
+.dashboard-card {
+  background: #850a0a;
   border: 1px solid #ad1616;
-  border-radius: 50%;     /* 👈 makes it circular */
-  width: 100px;           /* 👈 equal width */
-  height: 100px;          /* 👈 equal height */
-  display: flex;          /* 👇 centers text inside */
+  border-radius: 50%;        /* makes it a circle */
+  width: 120px;              /* circle width */
+  height: 120px;             /* circle height */
+  display: flex;             /* center the text */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: center;
   font-weight: 600;
+  font-size: 18px;           /* 👈 change this for bigger/smaller text */
   color: #fff;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
