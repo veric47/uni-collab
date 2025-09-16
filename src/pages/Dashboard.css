@@ -1,10 +1,6 @@
 .dashboard-header {
   color: #850a0a;
   padding: 1rem;
-  border-radius: 300px;
+  border-radius: 0.5rem;
   text-align: center;
-  position: fixed;
 }
-
-
- 
