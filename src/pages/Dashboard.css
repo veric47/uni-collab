@@ -5,14 +5,17 @@
   text-align: center;
 }
 .dashboard-card{
-    background: #850a0a;
-    border: 1px solid #ad1616;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: center;
-    font-weight: 600;
-    color: #ccc;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+background: #850a0a;
+  border: 1px solid #ad1616;
+  border-radius: 50%;     /* 👈 makes it circular */
+  width: 100px;           /* 👈 equal width */
+  height: 100px;          /* 👈 equal height */
+  display: flex;          /* 👇 centers text inside */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
