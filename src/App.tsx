@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import ProjectPage from "./pages/ProjectPage";
 import EventPage from "./pages/EventPage";
 import Login from "./features/auth/Login";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
    
@@ -26,6 +27,7 @@ function App() {
         <Route path="/profiles" element={<ProfilePage />} />
         <Route path="/projects" element={<ProjectPage />} />
         <Route path="/events" element={<EventPage />} />
+        <Route path="/chat" element={<ChatPage />} />
       </Routes>
     </Router>
     </>
