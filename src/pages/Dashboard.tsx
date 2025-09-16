@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { mockProjects } from "../data/mockProjects";
 import { mockEvents } from "../data/mockEvents";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   return (
