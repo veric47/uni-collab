@@ -20,13 +20,13 @@ export default function Dashboard() {
       </div>
 
       <section className="grid md:grid-cols-2 gap-4">
-        <div className="dashboard-card">
+        <div className="dashbord-board-card">
           <h2 className="font-semibold mb-2">Recent Projects</h2>
           <ul className="list-disc ml-5">
             {mockProjects.slice(0,3).map(p => <li key={p.id}>{p.title}</li>)}
           </ul>
         </div>
-        <div className="dashboard-card">
+        <div className="dashbord-board-card">
           <h2 className="font-semibold mb-2">Upcoming Events</h2>
           <ul className="list-disc ml-5">
             {mockEvents.slice(0,3).map(e => <li key={e.id}>{e.title} — {e.date}</li>)}
