@@ -16,7 +16,7 @@ export default function Dashboard() {
         <Link to="/profiles" className="dashboard-card"> Profiles</Link>
         <Link to="/projects" className="dashboard-card"> Projects</Link>
         <Link to="/events" className="dashboard-card"> Events</Link>
-        <Link to="/recommendations" className="dashboard-card"> Recommendations</Link>
+        <Link to="/recommendations" className="dashboard-card1"> Recommendations</Link>
       </div>
 
       <section className="grid md:grid-cols-2 gap-4">
