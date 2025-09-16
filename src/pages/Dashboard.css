@@ -8,8 +8,8 @@
   background: #850a0a;
   border: 1px solid #ad1616;
   border-radius: 50%;        /* makes it a circle */
-  width: 120px;              /* circle width */
-  height: 120px;             /* circle height */
+  width: 140px;              /* circle width */
+  height: 140px;             /* circle height */
   display: flex;             /* center the text */
   align-items: center;
   justify-content: center;
