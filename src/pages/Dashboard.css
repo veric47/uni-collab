@@ -25,3 +25,11 @@
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+.dashboard-links{
+    display: flex;                 
+  justify-content: space-around;  
+  align-items: center;           
+  margin: 20px 0;   
+  gap: 40px;
+  margin: 20px 0;
+}

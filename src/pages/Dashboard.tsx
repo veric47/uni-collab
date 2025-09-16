@@ -12,7 +12,7 @@ export default function Dashboard() {
         </h1>
       </header>
 
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="dashboard-links">
         <Link to="/profiles" className="dashboard-card"> Profiles</Link>
         <Link to="/projects" className="dashboard-card"> Projects</Link>
         <Link to="/events" className="dashboard-card"> Events</Link>
