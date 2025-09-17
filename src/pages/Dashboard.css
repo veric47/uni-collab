@@ -38,3 +38,31 @@
   gap: 40px;
   margin: 20px 0;
 }
+.firebase-banner {
+  background: linear-gradient(135deg, #850a0a, #ad1616);
+  border-radius: 12px;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.firebase-banner .banner-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.banner-btn {
+  background: #fff;
+  color: #850a0a;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.banner-btn:hover {
+  background: #f5f5f5;
+  transform: scale(1.05);
+}
