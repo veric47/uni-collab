@@ -18,6 +18,16 @@ export default function Dashboard() {
         <Link to="/events" className="dashboard-card"> Events</Link>
         <Link to="/recommendations" className="dashboard-card"> Recommendations</Link>
       </div>
+      
+      <section className="firebase-banner">
+        <div className="banner-content">
+          <h2 className="text-2xl font-bold mb-2">Welcome to Uni-Collab 🚀</h2>
+          <p className="text-gray-700 mb-4">
+            Connect with peers, join projects, and grow your university network.
+          </p>
+          <button className="banner-btn">Get Started</button>
+        </div>
+      </section>
 
       <section className="grid md:grid-cols-2 gap-4">
         <div className="dashbord-board-card">
