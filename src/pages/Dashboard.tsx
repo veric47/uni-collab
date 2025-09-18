@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import { mockProjects } from "../data/mockProjects";
 import { mockEvents } from "../data/mockEvents";
+import { useState } from "react";
 import "./Dashboard.css";   // ✅ import your custom CSS
 
 export default function Dashboard() {
+
+   const [query, setQuery] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`AI Research query submitted: ${query}`); // placeholder
+    setQuery("");
+  };
   return (
     <div className="grid gap-6">
       <header className="dashboard-header">
@@ -18,6 +27,19 @@ export default function Dashboard() {
         <Link to="/events" className="dashboard-card"> Events</Link>
         <Link to="/recommendations" className="dashboard-card"> Recommendations</Link>
       </div>
+
+       <section className="ai-research">
+        <h2 className="text-xl font-semibold mb-2">AI Research Assistant 🤖</h2>
+        <form onSubmit={handleSubmit} className="ai-form">
+          <textarea
+            className="ai-textarea"
+            placeholder="Ask a question or type your research idea..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="submit" className="ai-btn">Submit</button>
+        </form>
+      </section>
 
       <section className="grid md:grid-cols-2 gap-4">
         <div className="dashbord-board-card">
