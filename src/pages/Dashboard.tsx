@@ -29,7 +29,7 @@ export default function Dashboard() {
       </div>
 
        <section className="ai-research">
-        <h2 className="text-xl font-semibold mb-2">AI Research Assistant 🤖</h2>
+        <h2 className="text-xl font-semibold mb-2">AI Research Assistant</h2>
         <form onSubmit={handleSubmit} className="ai-form">
           <textarea
             className="ai-textarea"
