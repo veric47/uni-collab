@@ -40,7 +40,6 @@
 }
 .ai-research {
   background: #cf885f;
-  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 20px 0;
@@ -56,6 +55,7 @@
 .ai-textarea {
   width: 100%;
   min-height: 120px;
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.75rem;
   font-size: 1rem;
