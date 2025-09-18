@@ -1,21 +1,24 @@
+/* Dashboard Header */
 .dashboard-header {
   color: #850a0a;
   padding: 1rem;
   border-radius: 0.5rem;
   text-align: center;
 }
+
+/* Circular Navigation Cards */
 .dashboard-card {
   background: #850a0a;
   border: 1px solid #ad1616;
-  border-radius: 50%;        /* makes it a circle */
-  width: 140px;              /* circle width */
-  height: 140px;             /* circle height */
-  display: flex;             /* center the text */
+  border-radius: 50%;        /* circle */
+  width: 140px;
+  height: 140px;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-weight: 600;
-  font-size: 16px;           /* 👈 change this for bigger/smaller text */
+  font-size: 16px;
   color: #fff;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -25,19 +28,23 @@
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-.dashboard-card:active{
-    background: #a81414;
-    box-shadow: 0 0 12px #ff4d4d;
-    transform: scale(0.98);
+
+.dashboard-card:active {
+  background: #a81414;
+  box-shadow: 0 0 12px #ff4d4d;
+  transform: scale(0.98);
 }
-.dashboard-links{
-  display: flex;                 
-  justify-content: space-around;  
-  align-items: center;           
-  margin: 20px 0;   
+
+/* Card Container */
+.dashboard-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   gap: 40px;
   margin: 20px 0;
 }
+
+/* AI Assistant Section */
 .ai-research {
   background: #cf885f;
   border: 1px solid #cf885f;
@@ -57,16 +64,40 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
+/* Textarea Styling */
 .ai-textarea {
   width: 100%;
-  min-height: 120px;
+  min-height: 100px;        /* fixed size, no shrinking */
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 0.75rem;
+  padding: 0.75rem 3rem 0.75rem 0.75rem; /* padding-right for icons */
   font-size: 1rem;
-  resize: vertical;
   resize: none;
   box-sizing: border-box;
+  outline: none;
+}
+
+/* Icon buttons inside textarea */
+.ai-icons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.ai-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.ai-icon-btn:hover {
+  color: #000;
 }

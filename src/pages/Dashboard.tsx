@@ -5,14 +5,21 @@ import { useState } from "react";
 import "./Dashboard.css";   // ✅ import your custom CSS
 
 export default function Dashboard() {
+  const [query, setQuery] = useState("");   // ✅ unified state
 
-   const [query, setQuery] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`AI Research query submitted: ${query}`); // placeholder
-    setQuery("");
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit();
+    }
   };
+
+  const handleSubmit = () => {
+    if (!query.trim()) return;
+    console.log("AI Research Query:", query); // 👉 hook this into your AI API
+    setQuery(""); // clear input
+  };
+
   return (
     <div className="grid gap-6">
       <header className="dashboard-header">
@@ -21,6 +28,7 @@ export default function Dashboard() {
         </h1>
       </header>
 
+      {/* Dashboard links */}
       <div className="dashboard-links">
         <Link to="/profiles" className="dashboard-card"> Profiles</Link>
         <Link to="/projects" className="dashboard-card"> Projects</Link>
@@ -28,31 +36,46 @@ export default function Dashboard() {
         <Link to="/recommendations" className="dashboard-card"> Recommendations</Link>
       </div>
 
-       <section className="ai-research">
+      {/* AI Research Assistant Section */}
+      <section className="ai-research">
         <h2 className="text-xl font-semibold mb-2">AI Research Assistant</h2>
-        <form onSubmit={handleSubmit} className="ai-form">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+          className="ai-form"
+        >
           <div className="ai-input-container">
-          <textarea
-            className="ai-textarea"
-            placeholder="Ask a question or type your research idea..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
+            <textarea
+              className="ai-textarea"
+              placeholder="Ask a question or type your research idea..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyDown} // ✅ enter-to-send
+            />
           </div>
         </form>
       </section>
 
+      {/* Recent Projects + Upcoming Events */}
       <section className="grid md:grid-cols-2 gap-4">
         <div className="dashbord-board-card">
           <h2 className="font-semibold mb-2">Recent Projects</h2>
           <ul className="list-disc ml-5">
-            {mockProjects.slice(0,3).map(p => <li key={p.id}>{p.title}</li>)}
+            {mockProjects.slice(0, 3).map((p) => (
+              <li key={p.id}>{p.title}</li>
+            ))}
           </ul>
         </div>
         <div className="dashbord-board-card">
           <h2 className="font-semibold mb-2">Upcoming Events</h2>
           <ul className="list-disc ml-5">
-            {mockEvents.slice(0,3).map(e => <li key={e.id}>{e.title} — {e.date}</li>)}
+            {mockEvents.slice(0, 3).map((e) => (
+              <li key={e.id}>
+                {e.title} — {e.date}
+              </li>
+            ))}
           </ul>
         </div>
       </section>
