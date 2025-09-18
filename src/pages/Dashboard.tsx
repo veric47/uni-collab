@@ -38,7 +38,6 @@ export default function Dashboard() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type="submit" className="ai-btn">Submit</button>
           </div>
         </form>
       </section>

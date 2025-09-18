@@ -70,19 +70,3 @@
   resize: none;
   box-sizing: border-box;
 }
-
-.ai-btn {
-  background: #850a0a;
-  color: #fff;
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: background 0.2s ease;
-}
-
-.ai-btn:hover {
-  background: #ad1616;
-}
