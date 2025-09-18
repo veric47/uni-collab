@@ -53,6 +53,12 @@
   gap: 1rem;
 }
 
+.ai-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .ai-textarea {
   width: 100%;
   min-height: 120px;

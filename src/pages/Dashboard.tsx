@@ -31,6 +31,7 @@ export default function Dashboard() {
        <section className="ai-research">
         <h2 className="text-xl font-semibold mb-2">AI Research Assistant</h2>
         <form onSubmit={handleSubmit} className="ai-form">
+          <div className="ai-input-container">
           <textarea
             className="ai-textarea"
             placeholder="Ask a question or type your research idea..."
@@ -38,6 +39,7 @@ export default function Dashboard() {
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="submit" className="ai-btn">Submit</button>
+          </div>
         </form>
       </section>
 
