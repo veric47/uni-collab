@@ -1,8 +1,57 @@
+/* ===== Dashboard General Layout ===== */
+.dashboard-header {
+  margin-bottom: 1rem;
+}
+
+.dashboard-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.dashboard-card {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.dashboard-card:hover {
+  background: #ececec;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== AI Research Assistant Section ===== */
+.ai-research {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+/* Form wrapper */
+.ai-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* ChatGPT-like Textarea */
+.ai-input-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
 .ai-textarea {
   width: 100%;
   border: 1px solid #ccc;
-  border-radius: 24px;          /* pill style */
+  border-radius: 24px;            /* pill style */
   padding: 0.75rem 3rem 0.75rem 1rem;
   font-size: 1rem;
   resize: none;
@@ -22,7 +71,7 @@
   box-shadow: 0 0 8px rgba(133, 10, 10, 0.6);
 }
 
-/* Icons inside */
+/* Icons inside (camera, mic, send) */
 .ai-icons {
   position: absolute;
   right: 12px;
@@ -44,7 +93,7 @@
   color: #000;
 }
 
-/* File preview */
+/* File preview after uploading */
 .ai-preview {
   display: flex;
   flex-wrap: wrap;
@@ -53,10 +102,21 @@
 }
 
 .ai-preview-item {
-  background: #fff;
+  background: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 4px 10px;
   font-size: 0.85rem;
   color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ===== Projects & Events Section ===== */
+.dashbord-board-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
 }
