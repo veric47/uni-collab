@@ -44,7 +44,7 @@
   margin: 20px 0;
 }
 
- /* AI Assistant Section */
+/* AI Assistant Section */
 .ai-research {
   background: #cf885f;
   border: 1px solid #cf885f;
@@ -70,23 +70,23 @@
 /* Textarea Styling */
 .ai-textarea {
   width: 100%;
-  min-height: 100px;
+  min-height: 100px;        /* fixed size */
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.75rem 3rem 0.75rem 0.75rem; /* space for icons */
   font-size: 1rem;
-  resize: none;
+  resize: none;             /* disable resizing */
   box-sizing: border-box;
   outline: none;
 }
 
-/* Action icons inside textarea */
+/* Icon buttons inside textarea */
 .ai-icons {
   position: absolute;
   right: 10px;
   bottom: 10px;
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .ai-icon-btn {
@@ -102,21 +102,19 @@
   color: #000;
 }
 
-/* File preview */
+/* File Preview */
 .ai-preview {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-top: 8px;
 }
 
 .ai-preview-item {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 6px;
   padding: 4px 8px;
   font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  color: #333;
 }
