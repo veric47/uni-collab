@@ -70,7 +70,7 @@
 /* Textarea Styling */
 .ai-textarea {
   width: 100%;
-  min-height: 100px;        /* fixed size, no shrinking */
+  min-height: 100px;        /* fixed size */
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.75rem 3rem 0.75rem 0.75rem; /* space for icons */

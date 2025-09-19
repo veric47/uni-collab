@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { mockProjects } from "../data/mockProjects";
 import { mockEvents } from "../data/mockEvents";
 import { useState } from "react";
-import "./Dashboard.css";   // ✅ import your custom CSS
+import "./Dashboard.css";   // ✅ custom CSS
 
 export default function Dashboard() {
   const [query, setQuery] = useState("");   
-  const [attachments, setAttachments] = useState<File[]>([]); // ✅ store uploaded files
+  const [attachments, setAttachments] = useState<File[]>([]); // ✅ uploaded files
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -25,7 +25,7 @@ export default function Dashboard() {
     if (!query.trim() && attachments.length === 0) return;
 
     console.log("AI Research Query:", query);
-    console.log("Attachments:", attachments); // 👉 connect this to your AI API
+    console.log("Attachments:", attachments); // 👉 connect to AI API
 
     setQuery(""); 
     setAttachments([]); 
@@ -47,7 +47,7 @@ export default function Dashboard() {
         <Link to="/recommendations" className="dashboard-card"> Recommendations</Link>
       </div>
 
-      {/* AI Research Assistant Section */}
+      {/* AI Research Assistant */}
       <section className="ai-research">
         <h2 className="text-xl font-semibold mb-2">AI Research Assistant</h2>
         <form
@@ -66,7 +66,7 @@ export default function Dashboard() {
               onKeyDown={handleKeyDown}
             />
 
-            {/* Action buttons inside text area */}
+            {/* Action buttons inside textarea */}
             <div className="ai-icons">
               <label className="ai-icon-btn" title="Upload Image">
                 📷
