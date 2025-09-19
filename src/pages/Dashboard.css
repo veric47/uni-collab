@@ -70,15 +70,23 @@
 /* Textarea Styling */
 .ai-textarea {
   width: 100%;
-  min-height: 100px;        /* fixed size */
+  min-height: 100px;        
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 0.75rem 3rem 0.75rem 0.75rem; /* space for icons */
+  padding: 0.75rem 3rem 0.75rem 0.75rem; 
   font-size: 1rem;
-  resize: none;             /* disable resizing */
+  resize: none;             
   box-sizing: border-box;
   outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s; /* smooth glow */
 }
+
+/* Glow effect on focus */
+.ai-textarea:focus {
+  border-color: #850a0a; /* or your theme color */
+  box-shadow: 0 0 8px #ff4d4d; /* glowing red */
+}
+
 
 /* Icon buttons inside textarea */
 .ai-icons {
