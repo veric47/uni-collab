@@ -5,7 +5,8 @@ import { useState } from "react";
 import "./Dashboard.css";   // ✅ import your custom CSS
 
 export default function Dashboard() {
-  const [query, setQuery] = useState("");   // ✅ unified state
+  const [query, setQuery] = useState("");   
+  const [attachments, setAttachments] = useState<File[]>([]); // ✅ store uploaded files
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -14,10 +15,20 @@ export default function Dashboard() {
     }
   };
 
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setAttachments([...attachments, ...Array.from(e.target.files)]);
+    }
+  };
+
   const handleSubmit = () => {
-    if (!query.trim()) return;
-    console.log("AI Research Query:", query); // 👉 hook this into your AI API
-    setQuery(""); // clear input
+    if (!query.trim() && attachments.length === 0) return;
+
+    console.log("AI Research Query:", query);
+    console.log("Attachments:", attachments); // 👉 connect this to your AI API
+
+    setQuery(""); 
+    setAttachments([]); 
   };
 
   return (
@@ -49,12 +60,48 @@ export default function Dashboard() {
           <div className="ai-input-container">
             <textarea
               className="ai-textarea"
-              placeholder="Ask a question or type your research idea..."
+              placeholder="Ask a question, share your research idea..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown} // ✅ enter-to-send
+              onKeyDown={handleKeyDown}
             />
+
+            {/* Action buttons inside text area */}
+            <div className="ai-icons">
+              <label className="ai-icon-btn" title="Upload Image">
+                📷
+                <input
+                  type="file"
+                  accept="image/*"
+                  hidden
+                  onChange={handleFileUpload}
+                />
+              </label>
+              <label className="ai-icon-btn" title="Upload Audio">
+                🎤
+                <input
+                  type="file"
+                  accept="audio/*"
+                  hidden
+                  onChange={handleFileUpload}
+                />
+              </label>
+              <button type="submit" className="ai-icon-btn" title="Send">
+                ➤
+              </button>
+            </div>
           </div>
+
+          {/* File preview */}
+          {attachments.length > 0 && (
+            <div className="ai-preview">
+              {attachments.map((file, idx) => (
+                <span key={idx} className="ai-preview-item">
+                  {file.type.startsWith("image/") ? "🖼️" : "🎵"} {file.name}
+                </span>
+              ))}
+            </div>
+          )}
         </form>
       </section>
 
