@@ -1,98 +1,32 @@
-/* Dashboard Header */
-.dashboard-header {
-  color: #850a0a;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-}
-
-/* Circular Navigation Cards */
-.dashboard-card {
-  background: #850a0a;
-  border: 1px solid #ad1616;
-  border-radius: 50%;        /* circle */
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 600;
-  font-size: 16px;
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.dashboard-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.dashboard-card:active {
-  background: #a81414;
-  box-shadow: 0 0 12px #ff4d4d;
-  transform: scale(0.98);
-}
-
-/* Card Container */
-.dashboard-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 40px;
-  margin: 20px 0;
-}
-
-/* AI Assistant Section */
-.ai-research {
-  background: #cf885f;
-  border: 1px solid #cf885f;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 20px 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.ai-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.ai-input-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-/* Textarea Styling */
+/* ChatGPT-like Textarea */
 .ai-textarea {
   width: 100%;
-  min-height: 100px;        
   border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 0.75rem 3rem 0.75rem 0.75rem; 
+  border-radius: 24px;          /* pill style */
+  padding: 0.75rem 3rem 0.75rem 1rem;
   font-size: 1rem;
-  resize: none;             
+  resize: none;
   box-sizing: border-box;
   outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s; /* smooth glow */
+  line-height: 1.5;
+  min-height: 42px;
+  max-height: 200px;
+  overflow-y: auto;
+
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Glow effect on focus */
+/* Glow when focused */
 .ai-textarea:focus {
-  border-color: #850a0a; /* or your theme color */
-  box-shadow: 0 0 8px #ff4d4d; /* glowing red */
+  border-color: #850a0a;
+  box-shadow: 0 0 8px rgba(133, 10, 10, 0.6);
 }
 
-
-/* Icon buttons inside textarea */
+/* Icons inside */
 .ai-icons {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 12px;
+  bottom: 8px;
   display: flex;
   gap: 8px;
 }
@@ -102,7 +36,7 @@
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: #444;
+  color: #666;
   transition: color 0.2s;
 }
 
@@ -110,43 +44,19 @@
   color: #000;
 }
 
-/* File Preview */
+/* File preview */
 .ai-preview {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-top: 8px;
 }
 
 .ai-preview-item {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
   color: #333;
-}
-/* Mic Button */
-.ai-mic-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: #666;
-  transition: color 0.2s, transform 0.2s;
-}
-
-.ai-mic-btn:hover {
-  color: #000;
-}
-
-.ai-mic-btn.recording {
-  color: red;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
 }
