@@ -1,81 +1,97 @@
-/* ===== Dashboard General Layout ===== */
+/* Dashboard Header */
 .dashboard-header {
-  margin-bottom: 1rem;
-}
-
-.dashboard-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-}
-
-.dashboard-card {
-  background: #f8f9fa;
+  color: #850a0a;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 0.5rem;
   text-align: center;
-  font-weight: 500;
-  color: #333;
+}
+
+/* Circular Navigation Cards */
+.dashboard-card {
+  background: #850a0a;
+  border: 1px solid #ad1616;
+  border-radius: 50%;        /* circle */
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .dashboard-card:hover {
-  background: #ececec;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ===== AI Research Assistant Section ===== */
+.dashboard-card:active {
+  background: #a81414;
+  box-shadow: 0 0 12px #ff4d4d;
+  transform: scale(0.98);
+}
+
+/* Card Container */
+.dashboard-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+/* AI Assistant Section */
 .ai-research {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  padding: 1rem;
+  background: #cf885f;
+  border: 1px solid #cf885f;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* Form wrapper */
 .ai-form {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-/* ChatGPT-like Textarea */
 .ai-input-container {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  width: 100%;
 }
 
+/* Textarea Styling */
 .ai-textarea {
   width: 100%;
+  min-height: 100px;        /* fixed size */
   border: 1px solid #ccc;
-  border-radius: 24px;            /* pill style */
-  padding: 0.75rem 3rem 0.75rem 1rem;
+  border-radius: 8px;
+  padding: 0.75rem 3rem 0.75rem 0.75rem; /* space for icons */
   font-size: 1rem;
-  resize: none;
+  resize: none;             /* disable resizing */
   box-sizing: border-box;
   outline: none;
-  line-height: 1.5;
-  min-height: 42px;
-  max-height: 200px;
-  overflow-y: auto;
-
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s; /* smooth glow */
 }
 
-/* Glow when focused */
+/* Glow on focus */
 .ai-textarea:focus {
-  border-color: #850a0a;
+  border-color: #850a0a;  /* same as theme */
   box-shadow: 0 0 8px rgba(133, 10, 10, 0.6);
 }
 
-/* Icons inside (camera, mic, send) */
+/* Icon buttons inside textarea */
 .ai-icons {
   position: absolute;
-  right: 12px;
-  bottom: 8px;
+  right: 10px;
+  bottom: 10px;
   display: flex;
   gap: 8px;
 }
@@ -85,7 +101,7 @@
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: #666;
+  color: #444;
   transition: color 0.2s;
 }
 
@@ -93,30 +109,44 @@
   color: #000;
 }
 
-/* File preview after uploading */
+/* File Preview */
 .ai-preview {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin-top: 8px;
 }
 
 .ai-preview-item {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 4px 10px;
-  font-size: 0.85rem;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-/* ===== Projects & Events Section ===== */
-.dashbord-board-card {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Mic Button */
+.ai-mic-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.ai-mic-btn:hover {
+  color: #000;
+}
+
+.ai-mic-btn.recording {
+  color: red;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
