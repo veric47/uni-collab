@@ -150,3 +150,66 @@
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+
+/* ChatGPT-like Textarea */
+.ai-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 24px;          /* pill style */
+  padding: 0.75rem 3rem 0.75rem 1rem;
+  font-size: 1rem;
+  resize: none;
+  box-sizing: border-box;
+  outline: none;
+  line-height: 1.5;
+  min-height: 42px;
+  max-height: 200px;
+  overflow-y: auto;
+
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Glow when focused */
+.ai-textarea:focus {
+  border-color: #850a0a;
+  box-shadow: 0 0 8px rgba(133, 10, 10, 0.6);
+}
+
+/* Icons inside */
+.ai-icons {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.ai-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.ai-icon-btn:hover {
+  color: #000;
+}
+
+/* File preview */
+.ai-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ai-preview-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  color: #333;
+}
