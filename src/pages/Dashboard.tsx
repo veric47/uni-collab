@@ -57,53 +57,23 @@ export default function Dashboard() {
           }}
           className="ai-form"
         >
-          <div className="ai-input-container">
-            <textarea
-              className="ai-textarea"
-              placeholder="Ask a question, share your research idea..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
-
-            {/* Action buttons inside textarea */}
-            <div className="ai-icons">
-              <label className="ai-icon-btn" title="Upload Image">
-                📷
-                <input
-                  type="file"
-                  accept="image/*"
-                  hidden
-                  onChange={handleFileUpload}
-                />
-              </label>
-              <label className="ai-icon-btn" title="Upload Audio">
-                🎤
-                <input
-                  type="file"
-                  accept="audio/*"
-                  hidden
-                  onChange={handleFileUpload}
-                />
-              </label>
-              <button type="submit" className="ai-icon-btn" title="Send">
-                ➤
-              </button>
-            </div>
-          </div>
-
-          {/* File preview */}
-          {attachments.length > 0 && (
-            <div className="ai-preview">
-              {attachments.map((file, idx) => (
-                <span key={idx} className="ai-preview-item">
-                  {file.type.startsWith("image/") ? "🖼️" : "🎵"} {file.name}
-                </span>
-              ))}
-            </div>
-          )}
-        </form>
-      </section>
+           <div className="ai-input-container">
+      <textarea
+        className="ai-textarea"
+        placeholder="Ask a question or type your research idea..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown} // ✅ enter-to-send
+      />
+      <div className="ai-icons">
+        {/* Add your icons (images, audio, send) */}
+        <button type="button" className="ai-icon-btn" title="Upload Image">🖼️</button>
+        <button type="button" className="ai-icon-btn" title="Upload Audio">🎤</button>
+        <button type="submit" className="ai-icon-btn" title="Send">➤</button>
+      </div>
+    </div>
+  </form>
+</section>
 
       {/* Recent Projects + Upcoming Events */}
       <section className="grid md:grid-cols-2 gap-4">
