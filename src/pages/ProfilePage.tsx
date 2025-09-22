@@ -42,7 +42,8 @@ export default function ProfilePage() {
           <option>Operations</option>
           <option>Undergraduate</option>
           <option>Master’s</option>
-          <option>PhD</option>
+          <option>PhD</option>ewqa  zVGBHNJKL;'
+          45263.02'
         </select>
 
         <input
