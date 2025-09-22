@@ -74,6 +74,7 @@ body
   font-size: 1rem;
   outline: none;
   transition: border 0.2s, box-shadow 0.2s;
+  width: 70%;
 }
 
 /* Bio textarea — fixed, not expandable */

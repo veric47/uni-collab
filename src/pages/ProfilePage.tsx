@@ -33,7 +33,7 @@ export default function ProfilePage() {
         
         {/* Full Name */}
         <input
-          className={`input ${errors.name ? "error-border" : ""}`}
+          className={`input name-input${errors.name ? "error-border" : ""}`}
           placeholder="Full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -56,7 +56,7 @@ export default function ProfilePage() {
 
         {/* Department */}
         <input
-          className={`input ${errors.department ? "error-border" : ""}`}
+          className={`input department-input${errors.department ? "error-border" : ""}`}
           placeholder="Department"
           value={department}
           onChange={(e) => setDepartment(e.target.value)}
@@ -67,7 +67,7 @@ export default function ProfilePage() {
 
         {/* Skills */}
         <input
-          className={`input ${errors.skills ? "error-border" : ""}`}
+          className={`input skills-input${errors.skills ? "error-border" : ""}`}
           placeholder="Skills (comma separated)"
           value={skills}
           onChange={(e) => setSkills(e.target.value)}
