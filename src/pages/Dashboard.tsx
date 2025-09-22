@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { mockProjects } from "../data/mockProjects";
 import { mockEvents } from "../data/mockEvents";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Dashboard.css";
 
 export default function Dashboard() {
   const [query, setQuery] = useState("");   
   const [attachments, setAttachments] = useState<File[]>([]);
+  const [isRecording, setIsRecording] = useState(false);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -21,14 +24,47 @@ export default function Dashboard() {
     }
   };
 
+  const handleMicToggle = async () => {
+    if (!isRecording) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const mediaRecorder = new MediaRecorder(stream);
+        mediaRecorderRef.current = mediaRecorder;
+        audioChunksRef.current = [];
+
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            audioChunksRef.current.push(event.data);
+          }
+        };
+
+        mediaRecorder.onstop = () => {
+          const audioBlob = new Blob(audioChunksRef.current, { type: "audio/webm" });
+          const audioFile = new File([audioBlob], `recording-${Date.now()}.webm`, {
+            type: "audio/webm",
+          });
+          setAttachments((prev) => [...prev, audioFile]);
+        };
+
+        mediaRecorder.start();
+        setIsRecording(true);
+      } catch (err) {
+        console.error("Mic access denied:", err);
+      }
+    } else {
+      mediaRecorderRef.current?.stop();
+      setIsRecording(false);
+    }
+  };
+
   const handleSubmit = () => {
     if (!query.trim() && attachments.length === 0) return;
 
     console.log("AI Research Query:", query);
     console.log("Attachments:", attachments);
 
-    setQuery("");
-    setAttachments([]);
+    setQuery(""); 
+    setAttachments([]); 
   };
 
   return (
@@ -60,14 +96,13 @@ export default function Dashboard() {
           <div className="ai-input-container">
             <textarea
               className="ai-textarea"
-              placeholder="Ask anything..."
+              placeholder="Ask a question, share your research idea..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
-              rows={1} // starts small like ChatGPT
             />
 
-            {/* Action buttons inside */}
+            {/* Action buttons inside text area */}
             <div className="ai-icons">
               <label className="ai-icon-btn" title="Upload Image">
                 📷
@@ -79,7 +114,7 @@ export default function Dashboard() {
                 />
               </label>
               <label className="ai-icon-btn" title="Upload Audio">
-                🎤
+                🎵
                 <input
                   type="file"
                   accept="audio/*"
@@ -87,13 +122,24 @@ export default function Dashboard() {
                   onChange={handleFileUpload}
                 />
               </label>
+
+              {/* Mic recording button */}
+              <button
+                type="button"
+                className={`ai-mic-btn ${isRecording ? "recording" : ""}`}
+                title={isRecording ? "Stop Recording" : "Start Recording"}
+                onClick={handleMicToggle}
+              >
+                🎤
+              </button>
+
               <button type="submit" className="ai-icon-btn" title="Send">
                 ➤
               </button>
             </div>
           </div>
 
-           
+          {/* File preview */}
           {attachments.length > 0 && (
             <div className="ai-preview">
               {attachments.map((file, idx) => (
@@ -106,7 +152,7 @@ export default function Dashboard() {
         </form>
       </section>
 
-      {/* Projects + Events */}
+      {/* Recent Projects + Upcoming Events */}
       <section className="grid md:grid-cols-2 gap-4">
         <div className="dashbord-board-card">
           <h2 className="font-semibold mb-2">Recent Projects</h2>
