@@ -67,18 +67,16 @@ body
 { 
     grid-template-columns: repeat(3, minmax(0, 1fr)); 
 }
-.textarea {
-  min-height: 120px;
+.input, .select, .textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 0.75rem;
   font-size: 1rem;
-  resize: none;
   outline: none;
   transition: border 0.2s, box-shadow 0.2s;
 }
 
-.textarea:focus {
+.input:focus, .select:focus, .textarea:focus {
   border-color: #850a0a;
   box-shadow: 0 0 6px rgba(133, 10, 10, 0.5);
 }
@@ -93,4 +91,3 @@ body
   font-size: 0.9rem;
   margin-top: -5px;
 }
-
