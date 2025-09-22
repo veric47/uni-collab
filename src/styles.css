@@ -76,6 +76,12 @@ body
   transition: border 0.2s, box-shadow 0.2s;
 }
 
+/* Bio textarea — fixed, not expandable */
+.textarea {
+  resize: none;
+  min-height: 100px;   /* you can adjust this */
+}
+
 .input:focus, .select:focus, .textarea:focus {
   border-color: #850a0a;
   box-shadow: 0 0 6px rgba(133, 10, 10, 0.5);
