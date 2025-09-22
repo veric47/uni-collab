@@ -153,7 +153,7 @@ export default function Dashboard() {
       </section>
 
       {/* Recent Projects + Upcoming Events */}
-      <section className="grid md:grid-cols-2 gap-4">
+    <section className="split-screen">
         <div className="dashbord-board-card">
           <h2 className="font-semibold mb-2">Recent Projects</h2>
           <ul className="list-disc ml-5">

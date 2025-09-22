@@ -213,3 +213,26 @@
   font-size: 0.85rem;
   color: #333;
 }
+/* Split screen for Recent Projects & Upcoming Events */
+.split-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal halves */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-board-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  min-height: 200px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .split-screen {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+}
