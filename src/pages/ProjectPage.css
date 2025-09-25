@@ -3,7 +3,7 @@
 }
 .border{
     background-color: whitesmoke;
-    border-radius: 8px;
+    border-radius: 8px #850a0a;
     padding: 10px;
     color: black;
 }
