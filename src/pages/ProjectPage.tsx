@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./ProjectPage.css";
 
 interface Project {
   id: number;
