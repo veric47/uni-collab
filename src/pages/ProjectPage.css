@@ -3,9 +3,10 @@
 }
 .border{
     background-color: whitesmoke;
-    border-radius: 8px #850a0a;
+    border-radius: 8px ;
     padding: 10px;
     color: black;
+    border-color: #850a0a;
 }
 .border:focus {
   border-color: #850a0a;
