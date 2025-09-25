@@ -2,10 +2,10 @@
     border-radius: 5px solid red;
 }
 .border{
-    background-color: whitesmoke;
+    background-color: black;
     border-radius: 8px ;
     padding: 10px;
-    color: black;
+    color: whitesmoke;;
     border-color: #850a0a;
 }
 .border:focus {
