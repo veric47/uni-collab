@@ -53,6 +53,7 @@ export default function ProjectPage() {
       <form onSubmit={handleSubmit}>
         <div className="grid">
         <input
+         className="border"
           type="text"
           placeholder="Project Title"
           value={title}
@@ -61,6 +62,7 @@ export default function ProjectPage() {
         />
 
         <input
+        className="border"
           type="text"
           placeholder="Category"
           value={category}
@@ -69,6 +71,7 @@ export default function ProjectPage() {
         />
 
         <input
+        className="border"
           type="text"
           placeholder="Description"
           value={description}

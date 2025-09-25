@@ -1,3 +1,6 @@
 .grid{
-    border: 10px solid red;
+    border: 5px solid red;
+}
+.border{
+    background-color: whitesmoke;
 }
