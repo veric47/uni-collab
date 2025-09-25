@@ -3,4 +3,6 @@
 }
 .border{
     background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 10px;
 }
