@@ -51,6 +51,7 @@ export default function ProjectPage() {
       <h2>Projects</h2>
 
       <form onSubmit={handleSubmit}>
+        <div className="grid">
         <input
           type="text"
           placeholder="Project Title"
@@ -74,6 +75,7 @@ export default function ProjectPage() {
           onChange={(e) => setDescription(e.target.value)}
           required
         />
+        </div>
 
         <button type="submit">Add Project</button>
       </form>
