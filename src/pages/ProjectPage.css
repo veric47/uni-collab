@@ -7,3 +7,7 @@
     padding: 10px;
     color: black;
 }
+.border:focus {
+  border-color: #850a0a;
+  box-shadow: 0 0 8px rgba(133, 10, 10, 0.6);
+}
